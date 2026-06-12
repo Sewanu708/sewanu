@@ -1,0 +1,32 @@
+.section {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.label {
+  position: relative;
+  margin: 0 0 1.25rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* The node dot sitting on the rail. */
+.label::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--rail-gap));
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+
+.body {
+  padding-top: 0.25rem;
+}

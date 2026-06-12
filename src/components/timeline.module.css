@@ -1,0 +1,17 @@
+.timeline {
+  position: relative;
+  /* Distance from the rail to the content's left edge. */
+  --rail-gap: 1.75rem;
+  padding-left: var(--rail-gap);
+}
+
+/* The continuous vertical rail. */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0.35rem;
+  bottom: 0.35rem;
+  left: 0;
+  width: 2px;
+  background: var(--line-soft);
+}

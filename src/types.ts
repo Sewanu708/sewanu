@@ -3,27 +3,24 @@ export interface EntryLink {
   label: string
 }
 
-/** A single item on the timeline — used for experience, projects, education, writing. */
-export interface TimelineEntryData {
+/** A chapter of the story — a titled passage of prose on the timeline. */
+export interface Chapter {
+  id: string
   title: string
-  org?: string
-  period?: string
-  /** Emphasized one-liner, e.g. a degree result. */
-  highlight?: string
-  tags?: string[]
-  points?: string[]
-  link?: EntryLink
+  /** Optional time range, e.g. "2021 – 2025". */
+  meta?: string
+  paragraphs: string[]
 }
 
-export interface TimelineSectionData {
-  id: string
-  label: string
-  entries: TimelineEntryData[]
+export interface WritingItem {
+  title: string
+  meta: string
+  link?: EntryLink
 }
 
 export interface Profile {
   name: string
-  title: string
+  tagline: string
   location: string
   portraitAlt: string
 }
@@ -31,4 +28,11 @@ export interface Profile {
 export interface Contact {
   email: string
   links: EntryLink[]
+}
+
+export interface Resume {
+  href: string
+  /** Filename the browser saves the download as. */
+  downloadName: string
+  label: string
 }

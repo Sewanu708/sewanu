@@ -1,36 +1,61 @@
 .hero {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  margin-bottom: 1rem;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
 }
 
 .portrait {
-  width: 100px;
-  height: 100px;
+  flex-shrink: 0;
+  width: 92px;
+  height: 92px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--surface);
-  box-shadow: 0 6px 24px rgba(44, 39, 35, 0.12);
+  box-shadow: 0 6px 20px rgba(44, 39, 35, 0.12);
+}
+
+.text {
+  min-width: 0;
 }
 
 .name {
-  margin: 1.25rem 0 0;
-  font-size: 1.7rem;
+  margin: 0;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--text);
 }
 
-.title {
-  margin: 0.35rem 0 0;
-  font-size: 1.02rem;
-  color: var(--accent);
+.tagline {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-soft);
+  max-width: 42ch;
 }
 
 .location {
-  margin: 0.2rem 0 0;
-  font-size: 0.85rem;
+  margin: 0.4rem 0 0;
+  font-size: 0.82rem;
   color: var(--text-muted);
+}
+
+@media (max-width: 480px) {
+  .hero {
+    gap: 1rem;
+  }
+
+  .portrait {
+    width: 72px;
+    height: 72px;
+  }
+
+  .name {
+    font-size: 1.3rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
 }

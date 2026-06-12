@@ -1,4 +1,5 @@
 import { CONTACT } from '../data/constants'
+import { ResumeLink } from './resume-link'
 import styles from './contact.module.css'
 
 export function Contact() {
@@ -15,6 +16,9 @@ export function Contact() {
             </a>
           </li>
         ))}
+        <li>
+          <ResumeLink className={styles.link} />
+        </li>
       </ul>
     </div>
   )

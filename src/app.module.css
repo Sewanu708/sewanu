@@ -3,3 +3,9 @@
   margin: 0 auto;
   padding: 4.5rem 1.5rem 6rem;
 }
+
+@media (max-width: 600px) {
+  .page {
+    padding: 2.75rem 1.25rem 4rem;
+  }
+}

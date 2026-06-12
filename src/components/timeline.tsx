@@ -1,21 +1,37 @@
-import { SECTIONS } from '../data/constants'
+import { CHAPTERS } from '../data/constants'
 import { Contact } from './contact'
-import { TimelineEntry } from './timeline-entry'
+import { Prose } from './prose'
+import { ResumeLink } from './resume-link'
 import { TimelineSection } from './timeline-section'
+import { Writing } from './writing'
 import styles from './timeline.module.css'
+import sectionStyles from './timeline-section.module.css'
+
+const RESUME_CHAPTER_ID = 'the-work'
 
 export function Timeline() {
   return (
     <div className={styles.timeline}>
-      {SECTIONS.map((section) => (
-        <TimelineSection key={section.id} label={section.label}>
-          {section.entries.map((entry, i) => (
-            <TimelineEntry key={i} {...entry} />
-          ))}
+      {CHAPTERS.map((chapter) => (
+        <TimelineSection
+          key={chapter.id}
+          label={chapter.title}
+          meta={chapter.meta}
+          action={
+            chapter.id === RESUME_CHAPTER_ID ? (
+              <ResumeLink className={sectionStyles.action} />
+            ) : undefined
+          }
+        >
+          <Prose paragraphs={chapter.paragraphs} />
         </TimelineSection>
       ))}
 
-      <TimelineSection label="Contact">
+      <TimelineSection label="Words">
+        <Writing />
+      </TimelineSection>
+
+      <TimelineSection label="Find me">
         <Contact />
       </TimelineSection>
     </div>

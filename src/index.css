@@ -33,4 +33,6 @@ body {
 body {
   background: var(--bg);
   min-height: 100vh;
+  /* Keep long words/links/emails from forcing horizontal scroll on small screens. */
+  overflow-wrap: break-word;
 }

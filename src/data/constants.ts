@@ -1,107 +1,58 @@
-import type { Contact, Profile, TimelineSectionData } from '../types'
+import type { Chapter, Contact, Profile, Resume, WritingItem } from '../types'
 
 export const PROFILE: Profile = {
   name: 'Sewanu Isaiah',
-  title: 'Software Engineer',
-  location: 'Lagos, Nigeria',
+  tagline:
+    'I build systems — and try to understand how they behave when things go wrong.',
+  location: 'Lagos · Nigeria',
   portraitAlt: 'Portrait of Sewanu Isaiah',
 }
 
-export const SECTIONS: TimelineSectionData[] = [
+export const CHAPTERS: Chapter[] = [
   {
-    id: 'experience',
-    label: 'Experience',
-    entries: [
-      {
-        title: 'Junior Software Engineer',
-        org: "Vittas · Techstars '22 · Remote",
-        period: 'May 2026 – Present',
-        tags: ['Payments', 'API Design', 'RBAC'],
-        points: [
-          'Built a drop-in payment UI package (Stripe-style) with secure API design and encrypted credential storage.',
-          'Built role-based access control across backend and frontend for admin security and user governance.',
-        ],
-      },
-      {
-        title: 'Software Engineer Intern',
-        org: "Vittas · Techstars '22 · Remote",
-        period: 'Dec 2025 – May 2026',
-        tags: ['NestJS', 'AWS Cognito', 'PostgreSQL', 'Mono'],
-        points: [
-          'Designed a multi-tenant architecture with invitation workflows and role/permission management.',
-          'Integrated Mono webhooks to automate loan-repayment tracking, cutting manual reconciliation with real-time status updates.',
-          'Built end-to-end two-factor authentication with AWS Cognito (backend challenge/response + frontend) aligned to OWASP best practices.',
-          'Built a transaction-receipt system with dynamic PDF generation and streaming.',
-        ],
-      },
-      {
-        title: 'Frontend Engineer',
-        org: 'HARP · Contract · Remote',
-        period: 'Nov 2025 – Present',
-        tags: ['Next.js', 'React', 'TypeScript'],
-        points: [
-          'Rebuilt Harp Engage — the legacy promotional-campaign UI — from scratch in Next.js.',
-          'Built the Harp Messaging UI end-to-end: email, SMS, WhatsApp, and push unified into one platform (live, in testing).',
-        ],
-      },
+    id: 'the-lab',
+    title: 'The Lab',
+    meta: '2021 – 2025',
+    paragraphs: [
+      'I studied Food Engineering at LAUTECH and graduated top of my department — First Class, 4.77/5.00. What pulled me in was the physics of it.',
+      "My final-year research analyzed how moisture moves through cassava starch — predicting shelf life from water activity and heat; it's currently being prepared for publication. Along the way I worked the food chemistry and engineering labs, helped a team repair and optimize a convective dryer during my SWEP placement, and ran tomato-paste lines at a factory where I learned what GMP and a failed batch really mean.",
     ],
   },
   {
-    id: 'projects',
-    label: 'Projects',
-    entries: [
-      {
-        title: 'Payment Gateway Service',
-        org: 'Personal Project',
-        tags: ['Python', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker'],
-        points: [
-          'Architected Authorization, Capture, Void, and Refund workflows with strong data consistency.',
-          'Multi-stage idempotency layer with recovery tracking to prevent duplicate transactions under concurrency and failures.',
-          'Retry with exponential backoff + jitter and token-bucket rate limiting for upstream resilience.',
-        ],
-      },
-      {
-        title: 'AI-Powered Email Template Builder',
-        org: 'In Development',
-        tags: ['Next.js', 'GrapesJS', 'Gemini AI', 'PostgreSQL', 'Drizzle'],
-        points: [
-          '“Figma for email” — drag-and-drop editor with MJML plugins for cross-client compatibility.',
-          'Gemini AI chat that generates templates from natural-language prompts.',
-          'Next.js server actions and API routes for data handling; encrypted storage for third-party API keys.',
-        ],
-      },
+    id: 'the-work',
+    title: 'The Work',
+    meta: '2025 – now',
+    paragraphs: [
+      'These days I work on the unglamorous parts of fintech and messaging. At Vittas (Techstars ’22) I help build a B2B payments platform — multi-tenant accounts, authentication, and loan automation. At HARP I rebuilt their messaging UI from the ground up, unifying email, SMS, WhatsApp, and push into one product.',
+      "On the side, I've been building a payment gateway obsessed with surviving retries, and an AI tool that's basically Figma for email.",
     ],
   },
   {
-    id: 'education',
-    label: 'Education',
-    entries: [
-      {
-        title: 'B.Tech, Food Engineering',
-        org: 'LAUTECH · Ogbomosho, Nigeria',
-        period: '2020 – 2025',
-        highlight: 'First Class Honours · CGPA 4.77 / 5.00',
-        points: [
-          'Best Graduating Student — 1st in the Department of Food Engineering.',
-          'Federal Government of Nigeria / NNPCL Scholarship recipient.',
-        ],
-      },
+    id: 'beyond',
+    title: 'Beyond the Work',
+    paragraphs: [
+      'Outside the lab I was Financial Secretary for our engineering student body, tutored friends through the courses that scared them, taught kids the basics of code at a weekend camp, and chased sponsors for the Hult Prize. I’m a member of the Nigerian Society of Engineers and GDG Ogbomosho — and still curious about food microbiology, sensory science, and where machine learning meets agriculture.',
     ],
   },
+]
+
+export const WRITING: WritingItem[] = [
   {
-    id: 'writing',
-    label: 'Writing',
-    entries: [
-      {
-        title: 'Idempotency in Practice: Designing a Payment Gateway That Survives Retries',
-        org: 'Substack',
-        period: 'Jun 2026',
-        link: {
-          href: 'https://sewanuisaiah.substack.com/p/idempotency-in-practice-designing',
-          label: 'Read on Substack →',
-        },
-      },
-    ],
+    title: 'Idempotency in Practice: Designing a Payment Gateway That Survives Retries',
+    meta: 'Substack · 2026',
+    link: {
+      href: 'https://sewanuisaiah.substack.com/p/idempotency-in-practice-designing',
+      label: 'Read →',
+    },
+  },
+  {
+    title:
+      'effect of heat-moisture-treatment on moisture stability and thermodynamic properties of cassava starch',
+    meta: 'with H. Adegbite, M. Waheed & O. Oyelade · 2025 · in preparation',
+    link: {
+      href: 'https://1drv.ms/w/c/09cab056071da2de/IQA7L1YHJCZQRJdfS7GI4OEwAV-u7IP01kmsSCOKJZ_a63Y?e=HUMkJa',
+      label: 'Read →',
+    },
   },
 ]
 
@@ -110,5 +61,12 @@ export const CONTACT: Contact = {
   links: [
     { href: 'https://github.com/sewanu708', label: 'GitHub' },
     { href: 'https://www.linkedin.com/in/sewanuisaiah', label: 'LinkedIn' },
+    { href: 'https://sewanuisaiah.substack.com', label: 'Substack' },
   ],
+}
+
+export const RESUME: Resume = {
+  href: '/001_Sewanu_Isaiah_CV.pdf',
+  downloadName: 'Sewanu_Isaiah_Resume.pdf',
+  label: 'Résumé ↓',
 }
